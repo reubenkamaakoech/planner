@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Todo lists</h1>
+
+<br>
+<br>
+<%= link_to "New todo list", new_todo_list_path, class:'btn btn-success btn-sm' %>
+
+<br>
+<div id="todo_lists">
+    <%= render 'todo_lists/todo_list' %> 
+</div>
+
+

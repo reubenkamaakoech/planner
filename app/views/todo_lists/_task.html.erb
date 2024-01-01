@@ -1,0 +1,9 @@
+    <tr>
+      <td>
+        <% form.text_field :_destroy, as: :hidden %> 
+        <%= link_to "Delete", '#', class:"remove_record", class:'btn btn-danger btn-sm' %>
+      </td>
+      <td><%= form.text_field :name, label: false, class:'form-control' %></td>
+      <td><%= form.check_box :completed, label: false %></td>
+      <td><%= form.date_field :due, label: false, as: :string, class:'form-control' %></td>
+    </tr> 

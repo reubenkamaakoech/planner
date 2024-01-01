@@ -1,0 +1,29 @@
+  <table class='table table-striped'>
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Todo List:</th>
+        <th>Task Name</th>
+        <th class='text-center'>Completed</th>
+        <th>Due</th>
+      </tr>
+    <thead>
+    <tbody>
+     <% @tasks.each do |task|%>
+      <tr>
+        <td><%= task.id %></td>
+        <td><%= task.todo_list.name %></td>
+        <td><%= task.name %></td>
+        <td class='text-center'><% if task.completed == true %>
+          <li class="green">
+          <% else%>
+          <li class="red">
+        <% end %></td>
+        <td><%= task.due %></td>
+        <td><%= link_to "Show", task, class:'btn btn-primary btn-sm' %></td>
+        <td><%= link_to "Delete", task_path(task), data: { turbo_method: "delete", turbo_confirm: "Are you sure?"}, class:"btn btn-danger btn-sm" %></td>
+      </tr>
+     <% end %>
+    </tbody>
+  </table>
+  
